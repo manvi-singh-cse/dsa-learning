@@ -12,7 +12,6 @@ public class subarrays_with_xor_k {
             int target = xor ^ x;
             if (map.containsKey(target)) {
                 count = count + map.get(target);
-                System.out.println("Found");
             }
             map.put(xor, map.getOrDefault(xor, 0) + 1);
         }
