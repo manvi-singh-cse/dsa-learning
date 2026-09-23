@@ -32,5 +32,6 @@ public class reverse_vowels {
         String s = sc.nextLine();
         String result = reverseVowels(s);
         System.out.println(result);
+        sc.close();
     }
 }
