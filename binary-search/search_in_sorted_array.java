@@ -4,12 +4,10 @@ public class search_in_sorted_array {
     public static int search(ArrayList<Integer> arr, int n, int k) {
         int idx = -1;
         int low = 0;
-        int high = n-1;
-        while(low <= high)
-        {
-            int mid = (low+high)/2;
-            if(arr.get(mid) == k)
-            {
+        int high = n - 1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (arr.get(mid) == k) {
                 idx = mid;
                 break;
             }
@@ -44,8 +42,12 @@ public class search_in_sorted_array {
         arr.add(1);
         arr.add(2);
         int n = arr.size();
-        int k = 0;
+        int k = 6;
         int result = search(arr, n, k);
-        System.out.println("The index of the target value is: " + result);
+        if (result == -1) {
+            System.out.println(k + " is not present in the array.");
+        } else {
+            System.out.println("The index of the target value is: " + result);
+        }
     }
 }
