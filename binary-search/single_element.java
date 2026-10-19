@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class single_element_in_sorted_array {
+public class single_element {
     public static int singleNonDuplicate(ArrayList<Integer> arr) {
 
         int n = arr.size();

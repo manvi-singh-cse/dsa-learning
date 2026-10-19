@@ -1,4 +1,4 @@
-public class minimum_in_rotated_sorted_array {
+public class minimum_in_rotated_array {
     public static int findMin(int[] arr) {
         int low = 0;
         int high = arr.length - 1;

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class search_in_rotated_sorted_array {
+public class search_in_rotated_array {
     public static int search(ArrayList<Integer> arr, int n, int k) {
         int idx = -1;
         int low = 0;
