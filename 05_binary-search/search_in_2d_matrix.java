@@ -1,22 +1,6 @@
 import java.util.ArrayList;
 
 public class search_in_2d_matrix {
-    static boolean binarySearch(ArrayList<Integer> arr, int low, int high, int target) {
-        if (low > high) {
-            return false;
-        }
-
-        int mid = low + (high - low) / 2;
-
-        if (arr.get(mid) == target) {
-            return true;
-        } else if (arr.get(mid) > target) {
-            return binarySearch(arr, low, mid - 1, target);
-        } else {
-            return binarySearch(arr, mid + 1, high, target);
-        }
-    }
-
     static boolean searchMatrix(ArrayList<ArrayList<Integer>> mat, int target) {
 
         int rows = mat.size();
@@ -26,13 +10,20 @@ public class search_in_2d_matrix {
             return false;
         }
 
-        for (int i = 0; i < rows; i++) {
-            if (cols == 0) {
-                return false;
-            }
+        int low = 0;
+        int high = (rows * cols) - 1;
 
-            if (target >= mat.get(i).get(0) && target <= mat.get(i).get(cols - 1)) {
-                return binarySearch(mat.get(i), 0, cols - 1, target);
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            int row = mid / cols;
+            int col = mid % cols;
+
+            if (mat.get(row).get(col) == target) {
+                return true;
+            } else if (mat.get(row).get(col) < target) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
             }
         }
         return false;
@@ -42,7 +33,7 @@ public class search_in_2d_matrix {
         ArrayList<ArrayList<Integer>> mat = new ArrayList<>();
         ArrayList<Integer> row1 = new ArrayList<>();
         row1.add(1);
-        row1.add(3);
+        row1.add(2);
         row1.add(5);
         row1.add(7);
         mat.add(row1);
@@ -50,7 +41,7 @@ public class search_in_2d_matrix {
         ArrayList<Integer> row2 = new ArrayList<>();
         row2.add(10);
         row2.add(11);
-        row2.add(16);
+        row2.add(13);
         row2.add(20);
         mat.add(row2);
 
