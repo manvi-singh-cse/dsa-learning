@@ -1,4 +1,4 @@
-public class binary_to_decimal {
+public class conversion {
     public static int toDecimal(int n, String str) {
         int p2 = 1;
         int ans = 0;
